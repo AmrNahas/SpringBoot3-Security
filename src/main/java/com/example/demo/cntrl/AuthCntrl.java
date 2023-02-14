@@ -1,8 +1,8 @@
-package com.example.demo2.cntrl;
+package com.example.demo.cntrl;
 
-import com.example.demo2.authModule.AuthRequest;
-import com.example.demo2.authModule.JwtUtils;
-import com.example.demo2.authModule.UserDao;
+import com.example.demo.common.authModule.AuthRequest;
+import com.example.demo.common.authModule.JwtUtils;
+import com.example.demo.common.authModule.UserDao;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

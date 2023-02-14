@@ -1,4 +1,4 @@
-package com.example.demo2.authModule;
+package com.example.demo.common.authModule;
 
 public class AuthConstants {
     public static final String SIGNING_KEY = "secretKey";

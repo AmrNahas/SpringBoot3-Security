@@ -1,4 +1,4 @@
-package com.example.demo2.authModule;
+package com.example.demo.common.authModule;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;

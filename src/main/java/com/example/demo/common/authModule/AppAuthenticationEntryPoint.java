@@ -1,8 +1,8 @@
-package com.example.demo2.authModule;
+package com.example.demo.common.authModule;
 
-import com.example.demo2.generic.GenericResponseElement;
-import com.example.demo2.generic.GenericResponseRoot;
-import com.example.demo2.generic.GenericStatusResp;
+import com.example.demo.common.generic.GenericResponseElement;
+import com.example.demo.common.generic.GenericResponseRoot;
+import com.example.demo.common.generic.GenericStatusResp;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -19,18 +19,18 @@ import java.io.Serializable;
 @Component
 public class AppAuthenticationEntryPoint implements AuthenticationEntryPoint, Serializable {
 
-  private static final Logger log = LoggerFactory.getLogger(AppAuthenticationEntryPoint.class);
+    private static final Logger log = LoggerFactory.getLogger(AppAuthenticationEntryPoint.class);
 
     @Override
     public final void commence(HttpServletRequest request, HttpServletResponse response, org.springframework.security.core.AuthenticationException e) throws IOException {
         GenericResponseRoot<Object> resp = new GenericResponseRoot<>(new GenericResponseElement<>(null, new GenericStatusResp(AuthConstants.ERR_DESC_NOT_AUTH_NUM, AuthConstants.ERR_DESC_AR, AuthConstants.ERR_DESC_LA)));
-
-        log.info(" AppAuthenticationEntryPoint :{} : {}","401" ,e.getMessage());
+        e.printStackTrace();
+        log.info(" AppAuthenticationEntryPoint :{} : {}", "401", e.getMessage());
         response.setStatus(HttpStatus.OK.value());
         ObjectMapper mapper = new ObjectMapper();
         response.setContentType("application/json;charset=UTF-8");
         response.setStatus(HttpStatus.UNAUTHORIZED.value());
-      //  response.getWriter().write(mapper.writeValueAsString(new AuthErrorResponse( new BusinessErrorDescDto()))); //  ... errorDescSrvc.getErrorDescDtoForAuth()
+        //  response.getWriter().write(mapper.writeValueAsString(new AuthErrorResponse( new BusinessErrorDescDto()))); //  ... errorDescSrvc.getErrorDescDtoForAuth()
         response.getWriter().write(mapper.writeValueAsString(resp));
 
     }

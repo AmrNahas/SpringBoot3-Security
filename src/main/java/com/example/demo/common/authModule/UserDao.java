@@ -1,4 +1,4 @@
-package com.example.demo2.authModule;
+package com.example.demo.common.authModule;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

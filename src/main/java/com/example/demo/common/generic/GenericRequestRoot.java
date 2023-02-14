@@ -1,4 +1,4 @@
-package com.example.demo2.generic;
+package com.example.demo.common.generic;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.Valid;

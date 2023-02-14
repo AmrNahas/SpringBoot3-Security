@@ -1,4 +1,4 @@
-package com.example.demo2.authModule;
+package com.example.demo.common.authModule;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.servlet.ServletException;
